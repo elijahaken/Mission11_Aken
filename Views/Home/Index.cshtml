@@ -1,0 +1,56 @@
+﻿@model IEnumerable<Mission11_Aken.Models.Book>
+@{
+    ViewData["Title"] = "Books";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>Title</th>
+        <th>Author</th>
+        <th>Publisher</th>
+        <th>ISBN</th>
+        <th>Classification</th>
+        <th>Category</th>
+        <th>Pages</th>
+        <th>Price</th>
+       
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var book in Model)
+    {
+        <tr>
+            <td>@book.Title</td>
+            <td>@book.Author</td>
+            <td>@book.Publisher</td>
+            <td>@book.Isbn</td>
+            <td>@book.Classification</td>
+            <td>@book.Category</td>
+            <td>@book.PageCount</td>
+            <td>$@book.Price.ToString("0.00")</td>
+            <td> Test </td>
+           
+        </tr>
+    }
+    </tbody>
+</table>
+
+<nav aria-label="Page navigation example">
+    <ul class="pagination justify-content-center">
+        <li class="page-item @(ViewBag.CurrentPage == 1 ? "disabled" : "")">
+            <a class="page-link" href="@Url.Action("Index", new { page = ViewBag.CurrentPage - 1 })">Previous</a>
+        </li>
+        @for (int i = 1; i <= ViewBag.TotalPages; i++)
+        {
+            <li class="page-item @(ViewBag.CurrentPage == i ? "active" : "")">
+                <a class="page-link" href="@Url.Action("Index", new { page = i })">@i</a>
+            </li>
+        }
+        <li class="page-item @(ViewBag.CurrentPage == ViewBag.TotalPages ? "disabled" : "")">
+            <a class="page-link" href="@Url.Action("Index", new { page = ViewBag.CurrentPage + 1 })">Next</a>
+        </li>
+    </ul>
+</nav>
