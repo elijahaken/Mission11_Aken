@@ -138,3 +138,4 @@
 /Users/glacierlij/Desktop/Mission11_Aken/obj/Debug/net8.0/Mission11_Aken.genruntimeconfig.cache
 /Users/glacierlij/Desktop/Mission11_Aken/obj/Debug/net8.0/ref/Mission11_Aken.dll
 /Users/glacierlij/Desktop/Mission11_Aken/obj/Debug/net8.0/Mission11_Aken.csproj.CopyComplete
+/Users/glacierlij/Desktop/Mission11_Aken/obj/Debug/net8.0/Mission11_Aken.sourcelink.json
